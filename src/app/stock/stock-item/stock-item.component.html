@@ -1,0 +1,9 @@
+<!-- <p>stock-item works!</p> -->
+
+<div class="stock-container">
+    <div class="name">
+        <!-- <h3>{{name}}</h3> - <h4>({{code}})</h4> -->
+        {{name + '('+code+')'}})
+    </div>
+    <div class="price" [class]="positiveChange ? 'positive' : 'negative' ">$ {{price}}</div>
+</div>
