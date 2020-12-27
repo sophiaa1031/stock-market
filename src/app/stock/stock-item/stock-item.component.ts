@@ -16,11 +16,6 @@ export class StockItemComponent implements OnInit {
   ngOnInit(): void {
     this.stock = new Stock('Test Stock Company','TSC',85,80);
     let diff = (this.stock.price/this.stock.previousPrice) -1;
-    let largeChanges = Math.abs(diff) > 0.01;
-    this.stockStyles ={
-      "color": this.stock.isPositiveChange()? "green":"red",
-      "font-size": largeChanges?"2em":"0.5em"
-    }
   }
 
   toggleFavorite(event){
