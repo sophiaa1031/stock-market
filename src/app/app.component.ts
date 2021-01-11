@@ -1,4 +1,4 @@
-import { Component, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Stock } from './model/stock';
 
 @Component({
@@ -9,20 +9,14 @@ import { Stock } from './model/stock';
 export class AppComponent implements OnInit {
   title = "Sophia's stock market";
 
-  public stockObj:Stock;
+  public stockObj: Stock;
 
   ngOnInit(): void {
-    this.stockObj = new Stock('Test Stock Company','TSC',85,80);
-    console.log('App Component - On Init')
+    this.stockObj = new Stock('Test Stock Company', 'TSC', 85, 80);
   }
 
-  onToggleFavorite(stockObj:Stock){
-    console.log("Favorite for Sophia's stock",stockObj,'was triggered');
+  onToggleFavorite(stock: Stock) {
+    console.log('Favorite for stock ', this.stockObj, ' was triggered');
     this.stockObj.favorite = !this.stockObj.favorite;
   }
-
-  tesMethod(){
-    console.log("test method in AppComponent triggered")
-  }
-
 }

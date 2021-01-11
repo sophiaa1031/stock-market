@@ -9,7 +9,7 @@ import { Stock } from '../../model/stock';
 export class StockItemComponent {
 
   @Input() public stock: Stock;
-  @Output() private toggleFavorite:EventEmitter<Stock>;
+  @Output() toggleFavorite:EventEmitter<Stock>;
 
   constructor() {
     this.toggleFavorite = new EventEmitter<Stock>();
@@ -18,5 +18,4 @@ export class StockItemComponent {
   onToggleFavorite(event){
     this.toggleFavorite.emit(this.stock);
   }
-
 }
